@@ -56,45 +56,61 @@ const Woman = () => {
 
       {/* Footer Section */}
       <footer className="footer">
-        <div className="footer-content">
+        <div className="footer-container">
           <div className="footer-section">
-            <h3>NEW TO YOOX</h3>
+            <h4>NEW TO YOOX</h4>
             <ul>
-              <li><a href="#">Shopping guide</a></li>
-              <li><a href="#">iPhone/iPad/Android</a></li>
-              <li><a href="#">Browse all Designers</a></li>
-              <li><a href="#">Browse all Categories</a></li>
+              <li>Shopping guide</li>
+              <li>iPhone/iPad/Android</li>
+              <li>Browse all Designers</li>
+              <li>Browse all Categories</li>
             </ul>
           </div>
           <div className="footer-section">
-            <h3>HELP</h3>
+            <h4>HELP</h4>
             <ul>
-              <li><a href="#">Delivery times & costs</a></li>
-              <li><a href="#">Payments and web security</a></li>
-              <li><a href="#">Product quality</a></li>
-              <li><a href="#">View your order</a></li>
+              <li>Delivery times & costs</li>
+              <li>Payments and web security</li>
+              <li>Product quality</li>
+              <li>View your order</li>
+              <li>Returns & refunds</li>
+              <li>FAQs</li>
+              <li>Size Guide</li>
+              <li>Return Policy</li>
+            </ul>
+          </div>
+          <div className="footer-section newsletter">
+            <h4>YOOX NEWS</h4>
+            <p>Sign up for the newsletter and discover the latest arrivals and promotions</p>
+            <input type="email" placeholder="Insert your e-mail address" />
+            <div className="gender-options">
+              <label><input type="radio" name="gender" /> Woman</label>
+              <label><input type="radio" name="gender" /> Man</label>
+            </div>
+            <div className="consent">
+              <input type="checkbox" /> <span>I consent to receive YOOX newsletters via email.</span>
+            </div>
+            <button className="signup-btn">SIGN UP</button>
+          </div>
+          <div className="footer-section">
+            <h4>MYOOX</h4>
+            <ul>
+              <li>Login</li>
+              <li>My Orders</li>
+              <li>My Details</li>
             </ul>
           </div>
           <div className="footer-section">
-            <h3>MYOOX</h3>
+            <h4>ABOUT US</h4>
             <ul>
-              <li><a href="#">Login</a></li>
-              <li><a href="#">My Orders</a></li>
-              <li><a href="#">My Details</a></li>
-            </ul>
-          </div>
-          <div className="footer-section">
-            <h3>ABOUT US</h3>
-            <ul>
-              <li><a href="#">Company Info</a></li>
-              <li><a href="#">Press</a></li>
-              <li><a href="#">Affiliation</a></li>
-              <li><a href="#">Careers</a></li>
+              <li>Company Info</li>
+              <li>Press</li>
+              <li>Affiliation</li>
+              <li>Careers</li>
             </ul>
           </div>
         </div>
         <div className="footer-bottom">
-          <img src={footerLogo} alt="Footer Logo" />
           <p>POWERED BY YOOX NET-A-PORTER GROUP - COPYRIGHT © 2000-2025</p>
         </div>
       </footer>
