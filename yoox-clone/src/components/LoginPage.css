@@ -1,0 +1,152 @@
+/* LoginPage.css */
+
+/* General Container */
+.login-container {
+    background-color: #f7fafc;
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  /* Login Form Styling */
+  .login-form {
+    background-color: white;
+    padding: 3rem;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    width: 100%;
+    max-width: 400px;
+  }
+  
+  .login-heading {
+    font-size: 2rem;
+    font-weight: 600;
+    margin-bottom: 1rem;
+    text-align: center;
+  }
+  
+  .login-description {
+    text-align: center;
+    color: #4a5568;
+    font-size: 0.875rem;
+    margin-bottom: 1.5rem;
+  }
+  
+  .social-login {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    margin-bottom: 1.5rem;
+  }
+  
+  .social-button {
+    padding: 0.75rem;
+    border-radius: 8px;
+    font-weight: 600;
+    width: 100%;
+    cursor: pointer;
+    border: none;
+  }
+  
+  .social-button.facebook {
+    background-color: #3b5998;
+    color: white;
+  }
+  
+  .social-button.google {
+    background-color: #db4437;
+    color: white;
+  }
+  
+  .or-text {
+    text-align: center;
+    color: #4a5568;
+    font-size: 0.875rem;
+    margin-bottom: 1.5rem;
+  }
+  
+  .email-form {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+  }
+  
+  label {
+    font-size: 0.875rem;
+    font-weight: 600;
+  }
+  
+  input {
+    padding: 0.75rem;
+    margin-bottom: 1rem;
+    border: 1px solid #e2e8f0;
+    border-radius: 8px;
+  }
+  
+  input:focus {
+    outline: none;
+    border-color: #3182ce;
+    box-shadow: 0 0 0 3px rgba(49, 130, 204, 0.3);
+  }
+  
+  .checkbox-container {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+  }
+  
+  .forgot-password-link {
+    font-size: 0.875rem;
+    color: #3182ce;
+    text-align: right;
+    margin-bottom: 1.5rem;
+  }
+  
+  .forgot-password-link:hover {
+    text-decoration: underline;
+  }
+  
+  .login-button {
+    background-color: #3182ce;
+    color: white;
+    padding: 1rem;
+    border-radius: 8px;
+    font-weight: 600;
+    border: none;
+    cursor: pointer;
+    transition: background-color 0.3s;
+  }
+  
+  .login-button:hover {
+    background-color: #2b6cb0;
+  }
+  
+  .register-link {
+    text-align: center;
+    font-size: 0.875rem;
+    color: #4a5568;
+  }
+  
+  .register-link-text {
+    color: #3182ce;
+  }
+  
+  .register-link-text:hover {
+    text-decoration: underline;
+  }
+  
+  .privacy-policy {
+    text-align: center;
+    font-size: 0.75rem;
+    color: #4a5568;
+  }
+  
+  .privacy-link {
+    color: #3182ce;
+  }
+  
+  .privacy-link:hover {
+    text-decoration: underline;
+  }
+  
