@@ -111,7 +111,7 @@ input:focus {
   background-color: #3182ce;
   color: white;
   padding: 1rem;
-  border-radius: 8px;
+  border-radius: 0px;
   font-weight: 600;
   border: none;
   cursor: pointer;
@@ -122,17 +122,18 @@ input:focus {
   background-color: #2b6cb0;
 }
 
-.footer {
+.footer-register {
   text-align: center;
   font-size: 0.875rem;
   color: #3b5998;
+  width: auto;
 
 }
 
-.footer a {
+.footer-register a {
   color: #3182ce;
 }
 
-.footer a:hover {
+.footer-register a:hover {
   text-decoration: underline;
 }

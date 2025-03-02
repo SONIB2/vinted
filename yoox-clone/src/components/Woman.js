@@ -1,121 +1,131 @@
 import React, { useState } from 'react';
-import womanImage1 from '../components/images/16.jpg'; // Main image
-import image11 from '../components/images/11.jpg'; // Product 1 image
-import image14 from '../components/images/12.jpg'; // Product 2 image
-import image15 from '../components/images/13.jpg'; // Product 3 image
+import { Carousel } from 'react-responsive-carousel';
+import 'react-responsive-carousel/lib/styles/carousel.min.css';
+import { FaBars, FaTimes } from 'react-icons/fa';
+import video23 from '../components/images/23.mp4';
+import video17 from '../components/images/17.mp4';
+import image19 from '../components/images/19.jpg';
+import imageart1 from '../components/images/art1.jpg';
+import imageart2 from '../components/images/art2.jpg';
+import imageart3 from '../components/images/art3.jpg';
+import imageart4 from '../components/images/art4.jpg';
 import './Woman.css';
 
-const Woman = () => {
-  const [currentIndex, setCurrentIndex] = useState(0);
-  const productImages = [image11, image14, image15];
-  const productNames = ["VALENTINO GARAVANI", "KARL LAGERFELD", "MISSONI"];
-  const productDescriptions = ["High-waist belt", "Denim trousers", "Casual trouser"];
-  const productPrices = ["€ 443", "€ 161", "€ 537"];
+const App = () => {
+  const [menuOpen, setMenuOpen] = useState(false);
 
-  const nextProduct = () => {
-    setCurrentIndex((prevIndex) => (prevIndex + 1) % productImages.length);
-  };
+  const toggleMenu = () => setMenuOpen(!menuOpen);
 
-  const prevProduct = () => {
-    setCurrentIndex(
-      (prevIndex) => (prevIndex - 1 + productImages.length) % productImages.length
-    );
-  };
+  const menuItems = [
+    "Clothing", "Shoes", "Bags & Accessories", "VIEW ALL",
+    "LATEST ARRIVALS", "THIS WEEK", "TOP DESIGNERS", "UNIQUE FINDS"
+  ];
+
+  const carouselItems = [
+    { type: 'video', src: video23, text: "Discover Our Collection" },
+    { type: 'image', src: image19 },
+    { type: 'video', src: video17 }
+  ];
+
+  const footerSections = [
+    { title: "NEW TO YOOX", links: ["Shopping Guide", "Browse All Designers"] },
+    { title: "HELP", links: ["Delivery & Costs", "Returns & Refunds"] }
+  ];
 
   return (
-    <div className="woman-container">
-      <div className="image-container">
-        <img src={womanImage1} alt="New Arrival" />
-      </div>
-      <div className="text-container">
-        <h1>NEW & NOW</h1>
-        <p>Check out the latest arrivals</p>
-        <a href="/discover-all" className="discover-link">DISCOVER ALL</a>
-      </div>
+    <div className="app">
+      {/* Header */}
+      <header className="header">
+        <div className="logo">YOOX</div>
+        <button className="menu-toggle" onClick={toggleMenu}>
+          {menuOpen ? <FaTimes /> : <FaBars />}
+        </button>
+
+        {/* Navigation Menu */}
+        <nav className={`nav ${menuOpen ? "open" : ""}`}>
+          <ul>
+            {menuItems.map((item, index) => (
+              <li key={index}><a href="#">{item}</a></li>
+            ))}
+          </ul>
+        </nav>
+      </header>
+
+      {/* Carousel */}
+      <Carousel showThumbs={false} autoPlay infiniteLoop interval={4000} showArrows>
+        {carouselItems.map((slide, index) => (
+          <div key={index} className="carousel-slide">
+            {slide.type === 'image' ? (
+              <img src={slide.src} alt={slide.text} />
+            ) : (
+              <video autoPlay loop muted playsInline>
+                <source src={slide.src} type="video/mp4" />
+                Your browser does not support the video tag.
+              </video>
+            )}
+            {slide.text && <p className="legend">{slide.text}</p>}
+          </div>
+        ))}
+      </Carousel>
 
       {/* New Arrivals Section */}
-      <div className="new-arrivals">
-        <h2>NEW ARRIVALS</h2>
-        <div className="product-grid">
-          <div className="product-card">
-            <img src={productImages[currentIndex]} alt="Product" />
-            <h3>{productNames[currentIndex]}</h3>
-            <p>{productDescriptions[currentIndex]}</p>
-            <p className="price">{productPrices[currentIndex]}</p>
-          </div>
+     
+    <div className="new-arrivals">
+      <h2>NEW ARRIVALS</h2>
+      <a href="#" className="view-all-arrow">VIEW ALL</a>
+      <div className="products">
+        <div className="product">
+          <img src={imageart1} alt="Product 1" />
+          <h3>VALENTINO GARAVANI</h3>
+          <p>High-waist belt</p>
+          <span>€ 443</span>
         </div>
-
-        {/* Navigation Buttons */}
-        <div className="carousel-controls">
-          <button className="prev" onClick={prevProduct}>❮</button>
-          <button className="next" onClick={nextProduct}>❯</button>
+        <div className="product">
+          <img src={imageart2} alt="Product 2" />
+          <h3>KARL LAGERFELD</h3>
+          <p>Denim trousers</p>
+          <span>€ 161</span>
         </div>
-
-        <a href="/view-all" className="view-all">VIEW ALL</a>
+        <div className="product">
+          <img src={imageart3} alt="Product 3" />
+          <h3>MISSONI</h3>
+          <p>Casual trousers</p>
+          <span>€ 537</span>
+        </div>
+        <div className="product">
+          <img src={imageart4} alt="Product 4" />
+          <h3>GUCCI</h3>
+          <p>Leather shoes</p>
+          <span>€ 899</span>
+        </div>
       </div>
-
-      {/* Footer Section */}
+      <button className="arrow-button">&rarr;</button>
+    </div>
+    
+      {/* Footer */}
       <footer className="footer">
-        <div className="footer-container">
+        <div className="footer-sections">
+          {footerSections.map((section, index) => (
+            <div key={index} className="footer-section">
+              <h3>{section.title}</h3>
+              <ul>
+                {section.links.map((link, i) => (
+                  <li key={i}>{link}</li>
+                ))}
+              </ul>
+            </div>
+          ))}
+
+          {/* Newsletter Signup */}
           <div className="footer-section">
-            <h4>NEW TO YOOX</h4>
-            <ul>
-              <li>Shopping guide</li>
-              <li>iPhone/iPad/Android</li>
-              <li>Browse all Designers</li>
-              <li>Browse all Categories</li>
-            </ul>
-          </div>
-          <div className="footer-section">
-            <h4>HELP</h4>
-            <ul>
-              <li>Delivery times & costs</li>
-              <li>Payments and web security</li>
-              <li>Product quality</li>
-              <li>View your order</li>
-              <li>Returns & refunds</li>
-              <li>FAQs</li>
-              <li>Size Guide</li>
-              <li>Return Policy</li>
-            </ul>
-          </div>
-          <div className="footer-section newsletter">
-            <h4>YOOX NEWS</h4>
-            <p>Sign up for the newsletter and discover the latest arrivals and promotions</p>
+            <h3>YOOX NEWS</h3>
             <input type="email" placeholder="Insert your e-mail address" />
-            <div className="gender-options">
-              <label><input type="radio" name="gender" /> Woman</label>
-              <label><input type="radio" name="gender" /> Man</label>
-            </div>
-            <div className="consent">
-              <input type="checkbox" /> <span>I consent to receive YOOX newsletters via email.</span>
-            </div>
-            <button className="signup-btn">SIGN UP</button>
+            <button>SIGN UP</button>
           </div>
-          <div className="footer-section">
-            <h4>MYOOX</h4>
-            <ul>
-              <li>Login</li>
-              <li>My Orders</li>
-              <li>My Details</li>
-            </ul>
-          </div>
-          <div className="footer-section">
-            <h4>ABOUT US</h4>
-            <ul>
-              <li>Company Info</li>
-              <li>Press</li>
-              <li>Affiliation</li>
-              <li>Careers</li>
-            </ul>
-          </div>
-        </div>
-        <div className="footer-bottom">
-          <p>POWERED BY YOOX NET-A-PORTER GROUP - COPYRIGHT © 2000-2025</p>
         </div>
       </footer>
     </div>
   );
 };
 
-export default Woman;
+export default App;
