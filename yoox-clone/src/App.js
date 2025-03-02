@@ -9,9 +9,10 @@ import RegisterPage from './components/RegisterPage';
 import Cart from './components/cart';
 import Woman from './components/Woman';
 import './App.css';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'; // Ensure FontAwesomeIcon is imported
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'; 
 import { faPersonPregnant, faPersonRays, faPersonRifle } from '@fortawesome/free-solid-svg-icons';
-import { faFacebook, faInstagram, faTwitter, faYoutube, faPinterest, faTiktok } from '@fortawesome/free-brands-svg-icons'; // Updated imports for social icons
+import { faFacebook, faInstagram, faTwitter, faYoutube, faPinterest, faTiktok } from '@fortawesome/free-brands-svg-icons'; 
+import { faMobileAlt } from '@fortawesome/free-solid-svg-icons';  // Add this line
 
 // Import images
 import womanImage from "./components/images/1.jpg";
